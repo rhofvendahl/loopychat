@@ -1,0 +1,17 @@
+{
+  "name": "loopychat",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "browserify js/dialogflow.js -o js/dialogflow_bundle.js",
+    "clean": "rm -rf js/dialogflow_bundle.js",
+    "start": "npm run build; xdg-open ./index.html; npm run clean"
+  },
+  "dependencies": {
+    "dialogflow": "~0.7.0",
+    "http2": "^3.3.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "browserify": "~16.2.3"
+  }
+}
