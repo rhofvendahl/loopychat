@@ -5,12 +5,12 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   	<meta content="utf-8" http-equiv="encoding">
   	<meta charset="utf-8">
-  	<link rel="icon" type="image/png" href="favicon.png">
+  	<link rel="icon" type="image/png" href="loopy_v1.1/favicon.png">
   	<link href="css/styles.css" rel="stylesheet"/>
   </head>
 
   <body>
-    <iframe id="loopy" src="loopy_ncase_v1.1/index.html"></iframe>
+    <iframe id="loopy" src="loopy_v1.1/index.html"></iframe>
 
     <div id="chat">
       <div id="chat_log"></div>
@@ -26,9 +26,14 @@
 <script>
   window.onload = function(){
   	window.chat = new Chat();
-    // window.frames[0].subscribe("mouseclick", function(){
-      // console.log("it worked!")
-    console.log(window.frames[0].loopy)
-    // })
+  console.log("testing")
+  // window.frames[0].window.subscribe("model/changed", function(){
+  //   console.log("I hear it's changed")
+	// });
+  // console.log(window.frames[0].document.window)
+  console.log(window.frames["loopy"].contentWindow['subscribe'])
+  window.frames["loopy"].contentWindow['subscribe']("model/changed", function(){
+    console.log("it worked I guess")
+  });
   };
 </script>
